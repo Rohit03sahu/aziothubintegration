@@ -1,0 +1,159 @@
+
+Project Content : https://a-team.global/blog/iot-based-gps-tracking-software/
+
+
+https://circuitdigest.com/microcontroller-projects/iot-based-gps-location-tracker-using-nodemcu-track-and-save-gps-location-on-google-maps
+
+https://circuitdigest.com/microcontroller-projects/interfacing-gps-with-nodemcu-esp12
+
+https://www.electronicwings.com/nodemcu/gps-module-interfacing-with-nodemcu
+
+https://circuitdigest.com/microcontroller-projects/interfacing-stm32f103c8-with-gps-module-to-track-location-coordinates
+
+###########################################################################################
+
+Username : test_2023_0987@outlook.com
+Password : Cricket@001
+
+###########################################################################################
+
+Learn Doc : https://legacy.reactjs.org/docs/create-a-new-react-app.html
+
+React App Design ( https://create-react-app.dev/docs/getting-started/ )
+
+Dockerization for React App : https://www.geeksforgeeks.org/how-to-dockerize-a-reactjs-app/
+
+Prerequites : 
+1. You’ll need to have Node >= 14 on your local development machine 
+    https://github.com/coreybutler/nvm-windows/releases
+
+	Install Node and Verify using below command
+	
+	node -v
+
+
+App Building steps
+
+1. Create React App
+
+    npx create-react-app my-app
+	
+2. Go inside the App Folder 
+   
+    npm start  ( To start the application )
+	
+3. To run the app
+
+    npm run build
+
+
+
+===========================   Docker Image 
+
+Ref : https://www.section.io/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/
+
+FROM node:alpine
+WORKDIR /app
+COPY package.json ./
+COPY package-lock.json ./
+COPY ./ ./
+RUN npm i
+CMD ["npm", "run", "start"]
+
+1. docker build -f Dockerfile -t tagname .
+2. docker run -it -p 4001:3000 client
+	
+############################################################################################
+	
+Create Dotnet api in VS code
+
+
+dotnet new webapi --name <Project.Name>
+
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio-code
+
+dotnet run | dotnet restore | dotnet clean | dotnet build
+
+1. dotnet new webapi -o iotintegrationapi
+
+2. dotnet add package Microsoft.EntityFrameworkCore.InMemory
+
+3. dotnet add package Microsoft.Azure.Devices.Client
+
+4. dotnet add package Microsoft.Azure.Devices.Provisioning.Client --version 1.19.3
+
+5. dotnet add package Microsoft.Azure.Devices.Provisioning.Transport.Amqp --version 1.16.5
+
+6. dotnet add package Microsoft.Azure.Devices --version 2.0.0-preview005  ( Required Downgraded version)
+
+7. dotnet add package Azure.Messaging.EventHubs --version 5.9.2
+
+8. dotnet add package Microsoft.Extensions.Hosting --version 8.0.0-preview.5.23280.8
+
+9. dotnet add package Microsoft.Extensions.DependencyInjection --version 8.0.0-preview.5.23280.8
+
+
+===========================   Docker Image  WebAPI
+
+Ref : https://www.makeuseof.com/docker-image-dot-net-web-api/
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal AS base
+WORKDIR /app
+EXPOSE 80
+FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
+WORKDIR /src
+COPY ["iotintegrationapi.csproj", "./"]
+RUN dotnet restore "./iotintegrationapi.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "iotintegrationapi.csproj" -c Release -o /app/build
+FROM build AS publish
+RUN dotnet publish "iotintegrationapi.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "iotintegrationapi.dll"]
+
+1. docker build -f Dockerfile -t tagname .
+2. docker run -it -p 4001:3000 client
+
+
+
+
+###########################################################################################
+
+Create Wokrer Service 
+
+dotnet new worker --name <Project.Name>
+
+Device Provision Service
+
+https://www.c-sharpcorner.com/article/registering-devices-with-iot-hub-device-provisioning-service/
+
+
+
+
+
+##############################################################################################
+
+Azure Messaging Routing
+
+https://www.c-sharpcorner.com/article/how-to-bulk-import-iot-devices-in-azure-iot-hub-using-c-sharp/
+
+
+
+===========================   Docker Image For Worker Service
+
+Ref : https://www.section.io/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/
+
+FROM node:alpine
+WORKDIR /app
+COPY package.json ./
+COPY package-lock.json ./
+COPY ./ ./
+RUN npm i
+CMD ["npm", "run", "start"]
+
+1. docker build -f Dockerfile -t tagname .
+2. docker run -it -p 4001:3000 client
