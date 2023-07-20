@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\POC\\iotintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj": {}
+    "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\POC\\iotintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj": {
+    "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\POC\\iotintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj",
+        "projectUniqueName": "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj",
         "projectName": "iotintegrationconsumers",
-        "projectPath": "C:\\Projects\\POC\\iotintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj",
+        "projectPath": "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationconsumers\\iotintegrationconsumers.csproj",
         "packagesPath": "C:\\Users\\10346978\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\POC\\iotintegration\\iotintegrationconsumers\\obj\\",
+        "outputPath": "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationconsumers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\10346978\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -68,6 +68,10 @@
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[7.0.1, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.0, )"
             }
           },
           "imports": [

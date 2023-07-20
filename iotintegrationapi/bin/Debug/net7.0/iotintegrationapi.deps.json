@@ -18,6 +18,7 @@
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.8",
           "Microsoft.Extensions.DependencyInjection": "8.0.0-preview.5.23280.8",
           "Microsoft.Extensions.Hosting": "8.0.0-preview.5.23280.8",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -725,6 +726,7 @@
           }
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.0": {},
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -2004,6 +2006,13 @@
       "sha512": "sha512-KDYlgTyO693V6pi6SGk9eg+dDvKjuOgmkapbHdpnB1SmTPKpvWxVLIMyARJsCFLfB6axyURUJHOfvxBQ0yJKeg==",
       "path": "microsoft.rest.clientruntime/2.3.21",
       "hashPath": "microsoft.rest.clientruntime.2.3.21.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gfDtAL1WhkjbRdbZlt/ZeQYCbgRpNCZCGj+yeqHObsNFRDHjq8qZJOX9AyTxJpSRYMi9SJk7JDyAbbVYRgEhAA==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.17.0",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",

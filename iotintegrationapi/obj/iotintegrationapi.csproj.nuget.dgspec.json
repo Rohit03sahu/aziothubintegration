@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\POC\\iotintegration\\iotintegrationapi\\iotintegrationapi.csproj": {}
+    "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationapi\\iotintegrationapi.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\POC\\iotintegration\\iotintegrationapi\\iotintegrationapi.csproj": {
+    "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationapi\\iotintegrationapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\POC\\iotintegration\\iotintegrationapi\\iotintegrationapi.csproj",
+        "projectUniqueName": "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationapi\\iotintegrationapi.csproj",
         "projectName": "iotintegrationapi",
-        "projectPath": "C:\\Projects\\POC\\iotintegration\\iotintegrationapi\\iotintegrationapi.csproj",
+        "projectPath": "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationapi\\iotintegrationapi.csproj",
         "packagesPath": "C:\\Users\\10346978\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\POC\\iotintegration\\iotintegrationapi\\obj\\",
+        "outputPath": "C:\\Projects\\GitRepo\\aziothubintegration\\iotintegrationapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\10346978\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -80,6 +80,10 @@
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[8.0.0-preview.5.23280.8, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -60,8 +60,8 @@ COPY ./ ./
 RUN npm i
 CMD ["npm", "run", "start"]
 
-1. docker build -f Dockerfile -t tagname .
-2. docker run -it -p 4001:3000 client
+1. docker build -f Dockerfile -t iotintegrationui:latest .
+2. docker run -it -p 4001:3000 iotintegrationui:latest
 	
 ############################################################################################
 	
@@ -97,27 +97,31 @@ dotnet run | dotnet restore | dotnet clean | dotnet build
 
 Ref : https://www.makeuseof.com/docker-image-dot-net-web-api/
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal AS base
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
-FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["iotintegrationapi.csproj", "./"]
+COPY ["iotintegrationapi.csproj", "."]
 RUN dotnet restore "./iotintegrationapi.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "iotintegrationapi.csproj" -c Release -o /app/build
+
 FROM build AS publish
-RUN dotnet publish "iotintegrationapi.csproj" -c Release -o /app/publish
+RUN dotnet publish "iotintegrationapi.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "iotintegrationapi.dll"]
 
-1. docker build -f Dockerfile -t tagname .
-2. docker run -it -p 4001:3000 client
 
+
+1. docker build -f Dockerfile -t iotintegrationapi:latest .
+2. docker run -it -p 4001:3000 iotintegrationapi:latest
 
 
 
@@ -147,13 +151,25 @@ https://www.c-sharpcorner.com/article/how-to-bulk-import-iot-devices-in-azure-io
 
 Ref : https://www.section.io/engineering-education/build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/
 
-FROM node:alpine
+FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
-COPY ./ ./
-RUN npm i
-CMD ["npm", "run", "start"]
 
-1. docker build -f Dockerfile -t tagname .
-2. docker run -it -p 4001:3000 client
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+COPY ["iotintegrationconsumers.csproj", "."]
+RUN dotnet restore "./iotintegrationconsumers.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "iotintegrationconsumers.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "iotintegrationconsumers.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "iotintegrationconsumers.dll"]
+
+
+1. docker build -f Dockerfile -t iotintegrationconsumers:latest .
+2. docker run -it iotintegrationconsumers:latest
