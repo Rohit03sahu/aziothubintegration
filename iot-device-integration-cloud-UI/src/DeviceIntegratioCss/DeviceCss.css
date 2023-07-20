@@ -1,0 +1,16 @@
+PublisherDiv {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    float: left;
+    width: 45%;
+    margin: 2.5%;
+}
+
+
+SubcriberDiv {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    float: right;
+    width: 45%;
+    margin: 2.5%;
+}
