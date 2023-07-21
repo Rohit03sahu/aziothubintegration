@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iotintegratioapi
+  labels:
+    app: iotintegratioapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iotintegratioapi
+  template:
+    metadata:
+      labels:
+        app: iotintegratioapi
+    spec:
+      containers:
+      - name: iotintegratioapi
+        image: excerciseazureservice.azurecr.io/iotintegrationapi:1

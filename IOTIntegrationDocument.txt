@@ -210,5 +210,51 @@
 
 
 
+		**********************  Azure Login on CLI ********************** 
+
+		-- Create Container registry on Azure
+		-- Install Azure Client 
+
+		az acr login --name excerciseregistry.azurecr.io
+
+		Username : excerciseregistry
+		Password 1 : hh1lZY/A596vsveepOdEpsnpn5PsHL85
+		Password 2 : 4ogIPGKlqLFf9wusR=7IPLEH7q1f5K4w
+
+
+		**********************  Docker Commands CLI ********************** 
+
+			===>  Create Dockerfile
+			docker build -t aspnetapp .
+
+			===> Run Locally to verify 
+			docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
+
+			===> Create Tag
+			docker tag aspnetapp excerciseregistry/exercise_service_1:1
+			
+				OR
+			
+			docker tag aspnetapp excerciseregistry.azurecr.io/exercise_service_1:1
+			
+			===> Push Tag to registry
+			docker push excerciseregistry/exercise_service_1:1
+			
+				OR
+			
+			docker push excerciseregistry.azurecr.io/exercise_service_1:1
+
+		Once we pushed exercise_service_1 bucket will get generated in container registry
+
+
+		**********************  Now we can pull image from anywhere & test application **********************  
+			1. Login in container registry
+			2. Docker pull excerciseregistry.azurecr.io/exercise_service_1:1
+			3. docker run -it --rm -p 5000:80 --name excerciseregistry.azurecr.io/exercise_service_1:1
+
+
+
 
 ============================== AKS ========================================================
+
+	Reference : https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli
