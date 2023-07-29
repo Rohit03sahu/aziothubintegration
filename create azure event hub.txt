@@ -1,0 +1,7 @@
+1. Create IOT hub on azure
+1. Create event hub namespace in resource group
+    a. by create new service event hub ub reosurce group
+    b. create event hub inside the eventhub namespace
+
+2. Create Messaging Routing
+    a. Provide endpoint name and provide namespace, instance and create route as well 
