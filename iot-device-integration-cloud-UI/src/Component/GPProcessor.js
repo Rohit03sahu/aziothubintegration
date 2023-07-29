@@ -10,11 +10,9 @@ const GeoPosition = () => {
       consumerClient.subscribe({
         processEvents: async (events, context) => {
           for (const event of events) {
-            var temperature = event.body.temperature;
-            var humidity = event.body.humidity;
-            setTemperature(temperature);
-            console.log(temperature);
-            console.log(humidity);
+            var geoPosition = event.body.message;
+            setgeoPosition(geoPosition);
+            console.log(geoPosition);
           }
         },
         processError: async (err, context) => {
@@ -24,8 +22,8 @@ const GeoPosition = () => {
     };
   
     useEffect(() => {
-      getTemperature().catch((error) => {
-        console.error("Error running sample:", error);
+        getGeoPosition().catch((error) => {
+        console.error("Error running Azure Iot Hub Processor:", error);
       });
       return () => {
         // cleanUpFunction if applicable
@@ -35,7 +33,7 @@ const GeoPosition = () => {
   
     return (
       <div className="environment">
-        <p>The GeoPosition is {geoPosition}&#176; Celcius.</p>
+        <p>The GeoPosition is {geoPosition}.</p>
       </div>
     );
   };
