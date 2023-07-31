@@ -35,7 +35,7 @@ class FileManager
     {
         // Creating a new file, or overwrite
         // if the file already exists.
-        using (FileStream fs = File.Open(file_path, FileMode.Append, FileAccess.Write))
+        using (FileStream fs = File.Open(file_path, FileMode.OpenOrCreate, FileAccess.Write))
         {
             // Adding some info into the file
             byte[] info = new UTF8Encoding(true).GetBytes(message);
