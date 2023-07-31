@@ -9,10 +9,10 @@ public class DeviceProvisionController : ControllerBase
 {
     private readonly ILogger<DeviceProvisionController> _logger;
     private readonly IDevicePublisherClientToCloud _devicePublisherClientToCloud;
-    private readonly IDeviceService _deviceService;
+    private readonly IDeviceProvisionService _deviceService;
     private readonly AppSettings _appSettings;
 
-    public DeviceProvisionController(IDevicePublisherClientToCloud devicePublisherClientToCloud, IDeviceService deviceService, AppSettings appSettings, ILogger<DeviceProvisionController> logger)
+    public DeviceProvisionController(IDevicePublisherClientToCloud devicePublisherClientToCloud, IDeviceProvisionService deviceService, AppSettings appSettings, ILogger<DeviceProvisionController> logger)
     {
         _logger = logger;
         _devicePublisherClientToCloud = devicePublisherClientToCloud;

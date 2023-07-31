@@ -3,6 +3,7 @@ import '../DeviceIntegratioCss/DeviceCss.css';
 import Button from '../Component/Button';
 import TextArea from '../Component/TextArea';
 import TextBox from '../Component/TextBox';
+import GeoPosition from '../Component/GPProcessor';
 
 class Device extends Component {
 
@@ -50,7 +51,7 @@ class Device extends Component {
                     <TextArea />
                     <br /><br />
                     <div style={{ float: 'right' }}>
-                        <Button value="Publish"></Button>
+                        <Button value="Publish"></Button>                        
                     </div>
                 </div>
 
@@ -90,7 +91,9 @@ class Device extends Component {
                     <br /><br />
 
                     <div style={{ float: 'right' }}>
+                    {/* <GeoPosition> */}
                         <Button value="Subcribe"></Button>
+                    {/* </GeoPosition> */}
                     </div>
                 </div>
             </div>

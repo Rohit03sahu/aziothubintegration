@@ -178,6 +178,13 @@ C:\Projects\POC\iotintegration\iotintegrationapi\obj\Debug\net7.0\refint\iotinte
 C:\Projects\POC\iotintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.pdb
 C:\Projects\POC\iotintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.genruntimeconfig.cache
 C:\Projects\POC\iotintegration\iotintegrationapi\obj\Debug\net7.0\ref\iotintegrationapi.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.csproj.AssemblyReference.cache
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.AssemblyInfoInputs.cache
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.AssemblyInfo.cs
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.csproj.CoreCompileInputs.cache
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.MvcApplicationPartsAssemblyInfo.cs
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\appsettings.Development.json
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\appsettings.json
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\iotintegrationapi.exe
@@ -201,6 +208,8 @@ C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Micro
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Azure.Devices.Provisioning.Client.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Azure.Devices.Provisioning.Transport.Amqp.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Azure.Devices.Shared.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Azure.EventHubs.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Azure.Services.AppAuthentication.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -230,6 +239,11 @@ C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Micro
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Microsoft.Rest.ClientRuntime.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Newtonsoft.Json.dll
@@ -238,6 +252,7 @@ C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Swash
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\System.Memory.Data.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\System.Text.Encodings.Web.dll
@@ -247,13 +262,6 @@ C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\runti
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
-C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.csproj.AssemblyReference.cache
-C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.AssemblyInfoInputs.cache
-C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.AssemblyInfo.cs
-C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.csproj.CoreCompileInputs.cache
-C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.MvcApplicationPartsAssemblyInfo.cs
-C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\iotintegrationapi.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\staticwebassets\msbuild.iotintegrationapi.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\staticwebassets\msbuild.build.iotintegrationapi.props
 C:\Projects\GitRepo\aziothubintegration\iotintegrationapi\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.iotintegrationapi.props

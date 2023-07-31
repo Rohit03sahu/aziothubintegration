@@ -18,6 +18,7 @@ public class IotHubDataConsumer : IIotHubDataConsumer
     public IotHubDataConsumer(AppSettings appSettings)
     {
         _appSettings = appSettings;
+        FileManager.FileCreate();
     }
     public async Task DefaultEndpointSetup()
     {
@@ -49,6 +50,7 @@ public class IotHubDataConsumer : IIotHubDataConsumer
                 {
                     msgSource = receivedEvent.Data.SystemProperties["iothub-message-source"].ToString();
                     Console.WriteLine($"IOT HUB Received Message partitionId : {partitionId} | Message Source : {msgSource} | Message : {body}");
+                    FileManager.InsertRecordInFile(body);
                 }
             }
         }

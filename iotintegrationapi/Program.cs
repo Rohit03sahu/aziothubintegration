@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddSingleton<AppSettings>();
 builder.Services.AddTransient<IDevicePublisherClientToCloud,DevicePublisherClientToCloud>();
 builder.Services.AddTransient<ICloudPublisherClientToDevice,CloudPublisherClientToDevice>();
-builder.Services.AddTransient<IDeviceService,DeviceService>();
+builder.Services.AddTransient<IDeviceProvisionService,DeviceProvisionService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

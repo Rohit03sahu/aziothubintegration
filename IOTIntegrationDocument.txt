@@ -46,7 +46,14 @@
 		
 	3. To run the app
 
-		npm run build
+		npm run build ( To Build application)
+
+
+	#############  Map Implementation
+
+	npm i react-leaflet
+
+	https://github.com/googlemaps/extended-component-library
 
 
 
@@ -91,6 +98,8 @@
 	8. dotnet add package Microsoft.Extensions.Hosting --version 8.0.0-preview.5.23280.8
 
 	9. dotnet add package Microsoft.Extensions.DependencyInjection --version 8.0.0-preview.5.23280.8
+	
+	10. dotnet add package Microsoft.Azure.EventHubs --version 4.3.2
 
 
 ===========================   Docker Image  WebAPI

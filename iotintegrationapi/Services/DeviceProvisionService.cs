@@ -1,13 +1,13 @@
 using Microsoft.Azure.Devices;
 using Microsoft.Azure.Devices.Common.Exceptions;
 
-public class DeviceService : IDeviceService
+public class DeviceProvisionService : IDeviceProvisionService
 {
 
     //static string connectionString = "HostName=iothubdeviceintegration.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=r0uGKCJTJSbCxhug5MIa3piuJD+jOWbtTimS1CbkWHU=";
     static RegistryManager registryManager;
     private readonly AppSettings _appSettings;
-    public DeviceService(AppSettings appSettings)
+    public DeviceProvisionService(AppSettings appSettings)
     {
         _appSettings = appSettings;
         registryManager = RegistryManager.CreateFromConnectionString(_appSettings.IotHUbConnectionString);
