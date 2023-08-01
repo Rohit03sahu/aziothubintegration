@@ -11,26 +11,7 @@ using System.Text;
 class FileManager
 {
     // Specifying a file path
-    static string file_path = @"file.txt";
-    public static void FileCreate()
-    {
-        try
-        {
-            // Creating a new file, or overwrite
-            // if the file already exists.
-            using (FileStream fs = File.Create(file_path))
-            {
-                // Adding some info into the file
-                byte[] info = new UTF8Encoding(true).GetBytes("GeeksforGeeks");
-                fs.Write(info, 0, info.Length);
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.ToString());
-        }
-    }
-
+    static string file_path = @"Storage.txt";
     public static void InsertRecordInFile(string message)
     {
         // Creating a new file, or overwrite

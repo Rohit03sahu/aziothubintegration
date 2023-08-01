@@ -33,14 +33,24 @@ function App() {
       {/* <Button value='Device Position' onClick={ () => setMapDisplay}> </Button> */}
       <body>
 
-        <br /><br /><br />
-        <label>Latitude : </label>
-        <input type="text" name="Lat" onChange={setlathandleChange} value={lat} />
-        <label>Longitude : </label>
-        <input type="text" name="Long" onChange={setlnghandleChange} value={lng} />
-        <button type="button" onClick={onSubmit} className="btn">Show Device </button>
-        <br /><br />
-        {isSubmit ? <DeviceMap lat={lat} lng={lng} /> : null}
+        <div style={{width:"46%", float:"left", margin:"1%"}}>
+          <h1>IOT Hub Integration Test Tool</h1>
+            <br /><br /><br />
+            <Device></Device>
+
+        </div>
+
+        <div style={{width:"46%", float:"right", margin:"1%"}}>
+          <h1>Device Current Location</h1>
+            <br /><br /><br />
+            <label>Latitude : </label>
+            <input type="text" name="Lat" onChange={setlathandleChange} value={lat} />
+            <label>Longitude : </label>
+            <input type="text" name="Long" onChange={setlnghandleChange} value={lng} />
+            <button type="button" onClick={onSubmit} className="btn">Show Device </button>
+            <br /><br />
+            {isSubmit ? <DeviceMap lat={lat} lng={lng} /> : null}
+        </div>
       </body>
     </div>
   );

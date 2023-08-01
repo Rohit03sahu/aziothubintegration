@@ -5,7 +5,7 @@ class TextArea extends Component {
         return (
             <textarea style={{
                 width: "100%",
-                height: "350px"
+                height: "200px"
             }}
                 name="body"
                 onChange={this.handleChange}

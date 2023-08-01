@@ -18,7 +18,6 @@ public class IotHubDataConsumer : IIotHubDataConsumer
     public IotHubDataConsumer(AppSettings appSettings)
     {
         _appSettings = appSettings;
-        FileManager.FileCreate();
     }
     public async Task DefaultEndpointSetup()
     {

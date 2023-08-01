@@ -4,101 +4,69 @@ import Button from '../Component/Button';
 import TextArea from '../Component/TextArea';
 import TextBox from '../Component/TextBox';
 import GeoPosition from '../Component/GPProcessor';
+import { Client } from 'azure-iothub';
 
-class Device extends Component {
+function Device() {
 
-    render() {
-        return (
-            <div style={{
-                width: '100%'
-            }}>
-                <tr textAlign='center'>
-                    <Button value="Connect to Broker"></Button>
-                </tr>                    
-                <div style={{
-                    float: 'left',
-                    width: '45%',
-                    margin: '2.5%',
-                    height: '100vh',
-                    textAlign: 'center'
-                }} >
-                    <h3> Mqtt Publisher</h3>
-                    <label
-                        style={{
-                            float: 'left',
-                            fontSize: '18px',
-                            textAlign: 'center'
-                        }}>Topic : &nbsp;&nbsp;&nbsp;
-                        <TextBox />
-                        &nbsp;&nbsp;&nbsp;
-                    </label>
+    
+    const OnConnect = event => {
+        const connectionString = 'HostName=iothubdeviceintegration.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=r0uGKCJTJSbCxhug5MIa3piuJD+jOWbtTimS1CbkWHU=';
+        const client = Client.fromConnectionString(connectionString);
+        client.open(function (err) {
+            if (err) {
+                console.error('Could not connect: ' + err.message);
+            } else {
+                console.log('Client connected');
+            }
+        });
+    };
+    return (
+        <div style={{ width: '100%' }}>
 
-                    <label
-                        style={{
-                            float: 'left',
-                            fontSize: '18px',
-                            textAlign: 'center'
-                        }}>QOS : &nbsp;&nbsp;&nbsp;
-                        <select style={{ height: '22px', width: '80px' }} id="pub_qos" name="pub_qos">
-                            <option value="Pub_QOS_0">QOS 0</option>
-                            <option value="Pub_QOS_1">QOS 1</option>
-                            <option value="Pub_QOS_2">QOS 2</option>
-                        </select>
-                    </label>
+            <div style={{ float: 'left', width: '90%', height: '100vh', textAlign: 'center' }} >
 
+                <tr style={{ float: 'left', fontSize: '18px', textAlign: 'center' }}>Topic : &nbsp;&nbsp;&nbsp;
+                    <TextBox />
+                    &nbsp;&nbsp;&nbsp;
+                </tr>
+                <label style={{ float: 'left', fontSize: '18px', textAlign: 'center' }}>QOS : &nbsp;&nbsp;&nbsp;
+                    <select style={{ height: '22px', width: '80px' }} id="pub_qos" name="pub_qos">
+                        <option value="Pub_QOS_0">QOS 0</option>
+                        <option value="Pub_QOS_1">QOS 1</option>
+                        <option value="Pub_QOS_2">QOS 2</option>
+                    </select>
+                </label>
+                <label> <button value="Publish"></button> </label>
+                <label>
+                    <button value="Publish" onClick={OnConnect}>Connect</button>
+                </label>
+                <br /><br />
+                <TextArea />
 
-                    <br /><br />
-                    <TextArea />
-                    <br /><br />
-                    <div style={{ float: 'right' }}>
-                        <Button value="Publish"></Button>                        
-                    </div>
-                </div>
+                <br /><br /><br />
 
-                <div style={{
-                    float: 'right',
-                    width: '45%',
-                    margin: '2.5%',
-                    height: '100vh',
-                    textAlign: 'center'
-                }} >
-                    <h3>Mqtt Subcriber</h3>
-                    <label
-                        style={{
-                            float: 'left',
-                            fontSize: '18px',
-                            textAlign: 'center'
-                        }}>Topic : &nbsp;&nbsp;&nbsp;
-                        <TextBox />
-                        &nbsp;&nbsp;&nbsp;
-                    </label>
-                    <label
-                        style={{
-                            float: 'left',
-                            fontSize: '18px',
-                            textAlign: 'center'
-                        }}>QOS : &nbsp;&nbsp;
-                        <select style={{ height: '22px', width: '80px' }} id="sub_qos" name="sub_qos">
-                            <option value="Sub_QOS_0">QOS 0</option>
-                            <option value="Sub_QOS_1">QOS 1</option>
-                            <option value="Sub_QOS_2">QOS 2</option>
-                        </select>
-                    </label>
+                <label
+                    style={{ float: 'left', fontSize: '18px', textAlign: 'center' }}>Topic : &nbsp;&nbsp;&nbsp;
+                    <TextBox />
+                    &nbsp;&nbsp;&nbsp;
+                </label>
+                <label style={{ float: 'left', fontSize: '18px', textAlign: 'center' }}>QOS : &nbsp;&nbsp;
+                    <select style={{ height: '22px', width: '80px' }} id="sub_qos" name="sub_qos">
+                        <option value="Sub_QOS_0">QOS 0</option>
+                        <option value="Sub_QOS_1">QOS 1</option>
+                        <option value="Sub_QOS_2">QOS 2</option>
+                    </select>
+                </label>
+                <label>
+                    <Button value="Subcribe"></Button>
+                </label>
+                <br /><br />
+                <TextArea />
+                <br /><br />
 
-
-                    <br /><br />
-                    <TextArea />
-                    <br /><br />
-
-                    <div style={{ float: 'right' }}>
-                    {/* <GeoPosition> */}
-                        <Button value="Subcribe"></Button>
-                    {/* </GeoPosition> */}
-                    </div>
-                </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Device;
