@@ -14,6 +14,8 @@ IHost host = Host.CreateDefaultBuilder(args)
     services.AddSingleton<AppSettings>();
     services.AddTransient<IIotHubDataConsumer, IotHubDataConsumer>();
     services.AddTransient<IDeviceDataConsumer, DeviceDataConsumer>();
+    services.AddTransient<IDBLayer, DBLayer>();
+    
     services.AddHostedService<Worker>();
 })
 .Build();

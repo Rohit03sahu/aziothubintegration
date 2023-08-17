@@ -6,13 +6,15 @@ public class Worker : BackgroundService
     private readonly IConfiguration _configuration;
     private readonly IIotHubDataConsumer _iotHubDataConsumer;
     private readonly IDeviceDataConsumer _deviceDataConsumer;
+    private readonly IDBLayer _dBLayer;
 
-    public Worker(ILogger<Worker> logger, IConfiguration configuration,IIotHubDataConsumer iotHubDataConsumer,IDeviceDataConsumer deviceDataConsumer)
+    public Worker(ILogger<Worker> logger, IConfiguration configuration,IIotHubDataConsumer iotHubDataConsumer,IDeviceDataConsumer deviceDataConsumer, IDBLayer dBLayer)
     {
         _configuration = configuration;
         _logger = logger;
         _deviceDataConsumer=deviceDataConsumer;
         _iotHubDataConsumer= iotHubDataConsumer;
+        _dBLayer=dBLayer;
     }
     public override async Task StartAsync(CancellationToken stoppingToken)
     {
@@ -21,7 +23,7 @@ public class Worker : BackgroundService
         _iotHubDataConsumer.DefaultEndpointSetup();
 
         _deviceDataConsumer.StartConnection();
-        _deviceDataConsumer.SubscribeMessage("iot-device-1");
+        _deviceDataConsumer.SubscribeMessage("iot-device-001");
     }
 
     public override async Task StopAsync(CancellationToken stoppingToken)

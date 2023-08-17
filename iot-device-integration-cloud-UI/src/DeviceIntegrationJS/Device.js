@@ -3,23 +3,10 @@ import '../DeviceIntegratioCss/DeviceCss.css';
 import Button from '../Component/Button';
 import TextArea from '../Component/TextArea';
 import TextBox from '../Component/TextBox';
-import GeoPosition from '../Component/GPProcessor';
-import { Client } from 'azure-iothub';
+import GeoPosition from '../Component/ReceiveEvent';
+// import { Client } from 'azure-iothub';
 
-function Device() {
-
-    
-    const OnConnect = event => {
-        const connectionString = 'HostName=iothubdeviceintegration.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=r0uGKCJTJSbCxhug5MIa3piuJD+jOWbtTimS1CbkWHU=';
-        const client = Client.fromConnectionString(connectionString);
-        client.open(function (err) {
-            if (err) {
-                console.error('Could not connect: ' + err.message);
-            } else {
-                console.log('Client connected');
-            }
-        });
-    };
+function Device() {    
     return (
         <div style={{ width: '100%' }}>
 
@@ -36,9 +23,9 @@ function Device() {
                         <option value="Pub_QOS_2">QOS 2</option>
                     </select>
                 </label>
-                <label> <button value="Publish"></button> </label>
+                <label> <button value="Publish">Publish</button> </label>
                 <label>
-                    <button value="Publish" onClick={OnConnect}>Connect</button>
+                    <button value="Publish">Connect</button>
                 </label>
                 <br /><br />
                 <TextArea />

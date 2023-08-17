@@ -5,6 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// const { send } = require("./Component/SendEvent");
+// const { receive } = require("./Component/ReceiveEvent");
+
+// const sendElement = document.getElementById("send");
+// const receiveElement = document.getElementById("receive");
+
+// sendElement.addEventListener("click", () => {
+//   send();
+// });
+
+// receiveElement.addEventListener("click", () => {
+//   receive();
+// });
+
 root.render(
   <React.StrictMode>
     <App />

@@ -1,5 +1,9 @@
 using System.Text;
 using Azure.Messaging.EventHubs.Consumer;
+using iotintegrationconsumers.Model;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+using Newtonsoft.Json;
 
 public class IotHubDataConsumer : IIotHubDataConsumer
 {
@@ -10,21 +14,23 @@ public class IotHubDataConsumer : IIotHubDataConsumer
 
 
     private readonly AppSettings _appSettings;
+    private readonly IDBLayer _dBLayer;
     // private const string EventHubsCompatibleEndpoint = _appSettings.DefaultEventHub.EventHubsCompatibleEndpoint;// "Endpoint=sb://iothub-ns-iothubdevi-25136667-c95c8ebe56.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=r0uGKCJTJSbCxhug5MIa3piuJD+jOWbtTimS1CbkWHU=;EntityPath=iothubdeviceintegration";
     // private const string EventHubsCompatiblePath = _appSettings.DefaultEventHub.EventHubsCompatiblePath;// "iothubdeviceintegration";
     // private const string IotHubSasKey = _appSettings.DefaultEventHub.IotHubSasKey; // "c8GEFarOpvWGq3pKjqkf3b/yh32kA2ArIcNoYFki434=";
     // private const string ConsumerGroup = _appSettings.DefaultEventHub.ConsumerGroup; // "$Default";
     private EventHubConsumerClient eventHubConsumerClient = null;
-    public IotHubDataConsumer(AppSettings appSettings)
+    public IotHubDataConsumer(AppSettings appSettings, IDBLayer dBLayer)
     {
         _appSettings = appSettings;
+        _dBLayer = dBLayer;
     }
     public async Task DefaultEndpointSetup()
     {
         string eventHubConnectionString = $"Endpoint=sb://iothub-ns-iothubdevi-25136667-c95c8ebe56.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=r0uGKCJTJSbCxhug5MIa3piuJD+jOWbtTimS1CbkWHU=;EntityPath=iothubdeviceintegration";
 
         //Console.WriteLine($"_appSettings.DefaultEventHub.ConsumerGroup {_appSettings.DefaultEventHub.ConsumerGroup}");
-        eventHubConsumerClient = new EventHubConsumerClient(_appSettings.DefaultEventHub.ConsumerGroup, eventHubConnectionString);
+        eventHubConsumerClient = new EventHubConsumerClient(_appSettings.DefaultEventHub.ConsumerGroup, _appSettings.DefaultEventHub.EventHubsCompatibleEndpoint);
 
         var tasks = new List<Task>();
         var partitions = await eventHubConsumerClient.GetPartitionIdsAsync();
@@ -49,7 +55,27 @@ public class IotHubDataConsumer : IIotHubDataConsumer
                 {
                     msgSource = receivedEvent.Data.SystemProperties["iothub-message-source"].ToString();
                     Console.WriteLine($"IOT HUB Received Message partitionId : {partitionId} | Message Source : {msgSource} | Message : {body}");
-                    FileManager.InsertRecordInFile(body);
+                    var hubData = JsonConvert.DeserializeObject<HubModel>(body);
+                    if (hubData != null)
+                    {
+                        try
+                        {
+                            var messageData = JsonConvert.DeserializeObject<DeviceLocation>(hubData.Payload);
+                            Location location= new Location() 
+                            { 
+                                CreatedDateTime= messageData.CreatedDateTime,
+                                DeviceId= messageData.DeviceId,
+                                DeviceName= messageData.DeviceName,
+                                Lat=messageData.Lat, 
+                                Long=messageData.Long
+                            };    
+                            _dBLayer.SaveLocation(location);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Exception | StackTrace: {ex.Message} | {ex.StackTrace}");
+                        }
+                    }
                 }
             }
         }
@@ -57,7 +83,15 @@ public class IotHubDataConsumer : IIotHubDataConsumer
 
 }
 
+public class DeviceLocation
+{
+    public string DeviceId { get; set; }
+    public string DeviceName { get; set; }
+    public string Lat { get; set; }
+    public string Long { get; set; }
+    public DateTime CreatedDateTime { get; set; }
 
+}
 
 
 #region Second Options

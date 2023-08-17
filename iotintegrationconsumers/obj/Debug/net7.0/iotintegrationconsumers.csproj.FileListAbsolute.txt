@@ -154,3 +154,17 @@ C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\obj\Debug\net7.0
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\obj\Debug\net7.0\iotintegrationconsumers.pdb
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\obj\Debug\net7.0\iotintegrationconsumers.genruntimeconfig.cache
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\obj\Debug\net7.0\ref\iotintegrationconsumers.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\AWSSDK.Core.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\AWSSDK.SecurityToken.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\DnsClient.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\MongoDB.Driver.Legacy.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\MongoDB.Bson.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\MongoDB.Driver.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\MongoDB.Driver.Core.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\MongoDB.Libmongocrypt.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\SharpCompress.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\Snappier.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\ZstdSharp.dll
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\runtimes\linux\native\libmongocrypt.so
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll

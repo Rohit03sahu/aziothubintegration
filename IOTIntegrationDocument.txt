@@ -267,3 +267,10 @@
 ============================== AKS ========================================================
 
 	Reference : https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli
+	
+	
+	
+=============================== Mongo =====================================================
+
+docker pull mongo
+	

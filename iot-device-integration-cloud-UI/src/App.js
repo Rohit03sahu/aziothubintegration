@@ -25,6 +25,11 @@ function App() {
     setisSubmit(!isSubmit);
   };
 
+  function callApi() {
+    fetch('http://localhost:3001/fake', { method: 'GET' })
+      .then(data => data.json()) // Parsing the data into a JavaScript object
+      .then(json => alert(JSON.stringify(json))) // Displaying the stringified data in an alert popup
+  }
   return (
     <div className="App">
       {/* <header className="App-header">        
