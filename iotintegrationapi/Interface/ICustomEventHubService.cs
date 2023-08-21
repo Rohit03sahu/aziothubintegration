@@ -1,3 +1,3 @@
 public interface ICustomEventHubService{
-    void PublishToCustomEndpoint();
+    Task<bool> PublishToCustomEndpoint(string Data);
 }

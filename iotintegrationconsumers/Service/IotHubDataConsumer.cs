@@ -15,10 +15,6 @@ public class IotHubDataConsumer : IIotHubDataConsumer
 
     private readonly AppSettings _appSettings;
     private readonly IDBLayer _dBLayer;
-    // private const string EventHubsCompatibleEndpoint = _appSettings.DefaultEventHub.EventHubsCompatibleEndpoint;// "Endpoint=sb://iothub-ns-iothubdevi-25136667-c95c8ebe56.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=r0uGKCJTJSbCxhug5MIa3piuJD+jOWbtTimS1CbkWHU=;EntityPath=iothubdeviceintegration";
-    // private const string EventHubsCompatiblePath = _appSettings.DefaultEventHub.EventHubsCompatiblePath;// "iothubdeviceintegration";
-    // private const string IotHubSasKey = _appSettings.DefaultEventHub.IotHubSasKey; // "c8GEFarOpvWGq3pKjqkf3b/yh32kA2ArIcNoYFki434=";
-    // private const string ConsumerGroup = _appSettings.DefaultEventHub.ConsumerGroup; // "$Default";
     private EventHubConsumerClient eventHubConsumerClient = null;
     public IotHubDataConsumer(AppSettings appSettings, IDBLayer dBLayer)
     {
@@ -27,10 +23,11 @@ public class IotHubDataConsumer : IIotHubDataConsumer
     }
     public async Task DefaultEndpointSetup()
     {
-        string eventHubConnectionString = $"Endpoint=sb://iothub-ns-iothubdevi-25136667-c95c8ebe56.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=r0uGKCJTJSbCxhug5MIa3piuJD+jOWbtTimS1CbkWHU=;EntityPath=iothubdeviceintegration";
-
         //Console.WriteLine($"_appSettings.DefaultEventHub.ConsumerGroup {_appSettings.DefaultEventHub.ConsumerGroup}");
-        eventHubConsumerClient = new EventHubConsumerClient(_appSettings.DefaultEventHub.ConsumerGroup, _appSettings.DefaultEventHub.EventHubsCompatibleEndpoint);
+        if(_appSettings.IsDefaultEventHubEnable)
+            eventHubConsumerClient = new EventHubConsumerClient(_appSettings.DefaultEventHub.ConsumerGroup, _appSettings.DefaultEventHub.EventHubsCompatibleEndpoint);
+        else
+            eventHubConsumerClient = new EventHubConsumerClient(_appSettings.CustomEventHub.ConsumerGroup, _appSettings.CustomEventHub.EventHubsCompatibleEndpoint);
 
         var tasks = new List<Task>();
         var partitions = await eventHubConsumerClient.GetPartitionIdsAsync();
@@ -83,15 +80,7 @@ public class IotHubDataConsumer : IIotHubDataConsumer
 
 }
 
-public class DeviceLocation
-{
-    public string DeviceId { get; set; }
-    public string DeviceName { get; set; }
-    public string Lat { get; set; }
-    public string Long { get; set; }
-    public DateTime CreatedDateTime { get; set; }
 
-}
 
 
 #region Second Options

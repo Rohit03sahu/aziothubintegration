@@ -9,14 +9,17 @@ public class DeviceController : ControllerBase
     private readonly ILogger<DeviceController> _logger;
     private readonly IDevicePublisherClientToCloud _devicePublisherClientToCloud;
     private readonly ICloudPublisherClientToDevice _cloudPublisherClientToDevice;
+    private readonly ICustomEventHubService _customEventHubService;
     private readonly AppSettings _appSettings;
 
-    public DeviceController(IDevicePublisherClientToCloud devicePublisherClientToCloud,ICloudPublisherClientToDevice cloudPublisherClientToDevice, AppSettings appSettings, ILogger<DeviceController> logger)
+    public DeviceController(IDevicePublisherClientToCloud devicePublisherClientToCloud,ICloudPublisherClientToDevice cloudPublisherClientToDevice, AppSettings appSettings, ILogger<DeviceController> logger,
+        ICustomEventHubService customEventHubService)
     {
         _logger = logger;
         _devicePublisherClientToCloud = devicePublisherClientToCloud;
         _cloudPublisherClientToDevice = cloudPublisherClientToDevice;
         _appSettings = appSettings;
+        _customEventHubService = customEventHubService;
     }
 
     [HttpPost]
@@ -46,6 +49,16 @@ public class DeviceController : ControllerBase
         _cloudPublisherClientToDevice.StopConnection();
         return Ok(true);
     }
+
+
+    [HttpPost]
+    [Route("SendDataToCustomEventHub")]
+    public async Task<IActionResult> SendDataToCustomEventHub(string Payload)
+    {
+        var resp = await _customEventHubService.PublishToCustomEndpoint(Payload);        
+        return Ok(resp);
+    }
+
 
 
 }

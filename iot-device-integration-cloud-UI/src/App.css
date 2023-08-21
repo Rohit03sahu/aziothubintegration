@@ -38,3 +38,12 @@
 }
 
 
+input[type=text] {
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  width: 200px;
+  height: 28px;
+  text-align: left;
+}

@@ -9,6 +9,7 @@
       "iotintegrationapi/1.0.0": {
         "dependencies": {
           "Azure.Messaging.EventHubs": "5.9.2",
+          "Azure.Messaging.ServiceBus": "7.16.1",
           "Microsoft.AspNetCore.Hosting": "2.2.7",
           "Microsoft.AspNetCore.OpenApi": "7.0.2",
           "Microsoft.Azure.Devices": "1.39.0",
@@ -48,10 +49,10 @@
           }
         }
       },
-      "Azure.Core/1.32.0": {
+      "Azure.Core/1.34.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
-          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.Memory.Data": "1.0.2",
           "System.Numerics.Vectors": "4.5.0",
           "System.Text.Encodings.Web": "8.0.0-preview.5.23280.8",
@@ -60,8 +61,8 @@
         },
         "runtime": {
           "lib/net6.0/Azure.Core.dll": {
-            "assemblyVersion": "1.32.0.0",
-            "fileVersion": "1.3200.23.26002"
+            "assemblyVersion": "1.34.0.0",
+            "fileVersion": "1.3400.23.36203"
           }
         }
       },
@@ -80,11 +81,11 @@
       },
       "Azure.Messaging.EventHubs/5.9.2": {
         "dependencies": {
-          "Azure.Core": "1.32.0",
+          "Azure.Core": "1.34.0",
           "Azure.Core.Amqp": "1.3.0",
           "Microsoft.Azure.Amqp": "2.6.2",
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
-          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.Memory.Data": "1.0.2",
           "System.Reflection.TypeExtensions": "4.7.0",
           "System.Threading.Channels": "4.7.1",
@@ -94,6 +95,21 @@
           "lib/netstandard2.0/Azure.Messaging.EventHubs.dll": {
             "assemblyVersion": "5.9.2.0",
             "fileVersion": "5.900.223.30602"
+          }
+        }
+      },
+      "Azure.Messaging.ServiceBus/7.16.1": {
+        "dependencies": {
+          "Azure.Core": "1.34.0",
+          "Azure.Core.Amqp": "1.3.0",
+          "Microsoft.Azure.Amqp": "2.6.2",
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "System.Memory.Data": "1.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Messaging.ServiceBus.dll": {
+            "assemblyVersion": "7.16.1.0",
+            "fileVersion": "7.1600.123.41504"
           }
         }
       },
@@ -111,7 +127,7 @@
       "DotNetty.Buffers/0.7.0": {
         "dependencies": {
           "DotNetty.Common": "0.7.1",
-          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/DotNetty.Buffers.dll": {
@@ -151,7 +167,7 @@
       "DotNetty.Common/0.7.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "8.0.0-preview.5.23280.8",
-          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/DotNetty.Common.dll": {
@@ -199,7 +215,7 @@
           "Microsoft.Extensions.Hosting.Abstractions": "8.0.0-preview.5.23280.8",
           "Microsoft.Extensions.Logging": "8.0.0-preview.5.23280.8",
           "Microsoft.Extensions.Options": "8.0.0-preview.5.23280.8",
-          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.Reflection.Metadata": "1.6.0"
         }
       },
@@ -271,7 +287,7 @@
       },
       "Microsoft.Azure.Devices/1.39.0": {
         "dependencies": {
-          "Azure.Core": "1.32.0",
+          "Azure.Core": "1.34.0",
           "Microsoft.Azure.Amqp": "2.6.2",
           "Microsoft.Azure.Devices.Shared": "1.30.3",
           "Microsoft.Rest.ClientRuntime": "2.3.21",
@@ -345,7 +361,7 @@
         "dependencies": {
           "Microsoft.Azure.Amqp": "2.6.2",
           "Microsoft.Azure.Services.AppAuthentication": "1.0.3",
-          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.IdentityModel.Tokens.Jwt": "5.4.0",
           "System.Net.Http": "4.3.4",
           "System.Reflection.TypeExtensions": "4.7.0",
@@ -888,7 +904,7 @@
       "MongoDB.Bson/2.21.0": {
         "dependencies": {
           "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/netstandard2.1/MongoDB.Bson.dll": {
@@ -1173,7 +1189,11 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.6.0": {},
+      "System.Diagnostics.DiagnosticSource/6.0.1": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
       "System.Diagnostics.EventLog/8.0.0-preview.5.23280.8": {
         "runtime": {
           "lib/net7.0/System.Diagnostics.EventLog.dll": {
@@ -1392,7 +1412,7 @@
           "Microsoft.NETCore.Platforms": "5.0.0",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
           "System.Diagnostics.Tracing": "4.3.0",
           "System.Globalization": "4.3.0",
           "System.Globalization.Extensions": "4.3.0",
@@ -1539,7 +1559,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -1960,12 +1980,12 @@
       "path": "awssdk.securitytoken/3.7.100.14",
       "hashPath": "awssdk.securitytoken.3.7.100.14.nupkg.sha512"
     },
-    "Azure.Core/1.32.0": {
+    "Azure.Core/1.34.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NmnJxaNqKjPwnHXngVg63SrkwbJXrkT0mcK8uCx9rSq0nK6Q3Q+/GZRCaTWcdcECoRP5XK0lr3Ce8PZkHkuHNg==",
-      "path": "azure.core/1.32.0",
-      "hashPath": "azure.core.1.32.0.nupkg.sha512"
+      "sha512": "sha512-6dNpM8OlGO+5gvt97tHXBp9qWRFkimRFulupDSGRgyT3sje1kQNza1/EMYaDcolmNARPmVJo8+wgD6ReV9wG5Q==",
+      "path": "azure.core/1.34.0",
+      "hashPath": "azure.core.1.34.0.nupkg.sha512"
     },
     "Azure.Core.Amqp/1.3.0": {
       "type": "package",
@@ -1980,6 +2000,13 @@
       "sha512": "sha512-KAC79xzlOUrtQ0mlrPqijznfmlKeraiqavtZ3RfbV+8ukJf9C5fFSZCMSqq9N/2+eUkW3G4wJSchMXAyf+jxow==",
       "path": "azure.messaging.eventhubs/5.9.2",
       "hashPath": "azure.messaging.eventhubs.5.9.2.nupkg.sha512"
+    },
+    "Azure.Messaging.ServiceBus/7.16.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8wlJPbfPnM6EksXeIlGiCDMpc8pD0Ps4PMa9ULI5NaCWlWJwmMPw8TxPAFkEknegvcnwGWkknbXhhTyWULYMoQ==",
+      "path": "azure.messaging.servicebus/7.16.1",
+      "hashPath": "azure.messaging.servicebus.7.16.1.nupkg.sha512"
     },
     "DnsClient/1.6.1": {
       "type": "package",
@@ -2744,12 +2771,12 @@
       "path": "system.diagnostics.debug/4.3.0",
       "hashPath": "system.diagnostics.debug.4.3.0.nupkg.sha512"
     },
-    "System.Diagnostics.DiagnosticSource/4.6.0": {
+    "System.Diagnostics.DiagnosticSource/6.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mbBgoR0rRfl2uimsZ2avZY8g7Xnh1Mza0rJZLPcxqiMWlkGukjmRkuMJ/er+AhQuiRIh80CR/Hpeztr80seV5g==",
-      "path": "system.diagnostics.diagnosticsource/4.6.0",
-      "hashPath": "system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512"
+      "sha512": "sha512-KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
+      "path": "system.diagnostics.diagnosticsource/6.0.1",
+      "hashPath": "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512"
     },
     "System.Diagnostics.EventLog/8.0.0-preview.5.23280.8": {
       "type": "package",
@@ -2989,12 +3016,12 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
-      "path": "system.runtime.compilerservices.unsafe/5.0.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",

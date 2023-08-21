@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-
 namespace iotintegrationapi.Controllers;
 
 [ApiController]
+[EnableCors("_myAllowSpecificOrigins")]
 [Route("api")]
 public class DeviceLocationController : ControllerBase
 {
@@ -16,7 +17,7 @@ public class DeviceLocationController : ControllerBase
         _dBLayer = dBLayer;
     }
 
-    [HttpPost]
+    [HttpGet]    
     [Route("device-location")]
     public async Task<IActionResult> GetDeviceLocation(string DeviceId)
     {
