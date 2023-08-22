@@ -8,9 +8,9 @@ import GeoPosition from '../Component/ReceiveEvent';
 
 function Device() {    
     return (
-        <div style={{ width: '100%' }}>
+        <div style={{ textAlign:"center", width: '100%', height:"auto" }}>
 
-            <div style={{ float: 'left', width: '90%', height: '100vh', textAlign: 'center' }} >
+            <div style={{ width: '48%', float:"left", height: '500vh', textAlign: 'center' }} >
 
                 <tr style={{ float: 'left', fontSize: '18px', textAlign: 'center' }}>Topic : &nbsp;&nbsp;&nbsp;
                     <TextBox />
@@ -23,14 +23,16 @@ function Device() {
                         <option value="Pub_QOS_2">QOS 2</option>
                     </select>
                 </label>
-                <label> <button value="Publish">Publish</button> </label>
                 <label>
-                    <button value="Publish">Connect</button>
+                     <button value="Publish">Publish</button>  &nbsp;&nbsp;&nbsp;
+                </label>
+                <label>
+                    <button value="Connect">Connect</button>
                 </label>
                 <br /><br />
                 <TextArea />
-
-                <br /><br /><br />
+            </div>
+            <div style={{ width: '48%', float:"right", height: '500vh', textAlign: 'center' }} >
 
                 <label
                     style={{ float: 'left', fontSize: '18px', textAlign: 'center' }}>Topic : &nbsp;&nbsp;&nbsp;
@@ -45,7 +47,7 @@ function Device() {
                     </select>
                 </label>
                 <label>
-                    <Button value="Subcribe"></Button>
+                    <button value="Subscribe">Subscribe</button>
                 </label>
                 <br /><br />
                 <TextArea />

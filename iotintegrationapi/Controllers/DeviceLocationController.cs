@@ -19,9 +19,9 @@ public class DeviceLocationController : ControllerBase
 
     [HttpGet]    
     [Route("device-location")]
-    public async Task<IActionResult> GetDeviceLocation(string DeviceId)
+    public async Task<IActionResult> GetDeviceLocation(string DeviceId, int RecordCount)
     {
-        var resp = _dBLayer.GetLocation(DeviceId);
+        var resp = _dBLayer.GetLocation(DeviceId, RecordCount);
         return Ok(resp);
     }
 

@@ -24,10 +24,10 @@ public class IotHubDataConsumer : IIotHubDataConsumer
     public async Task DefaultEndpointSetup()
     {
         //Console.WriteLine($"_appSettings.DefaultEventHub.ConsumerGroup {_appSettings.DefaultEventHub.ConsumerGroup}");
-        if(_appSettings.IsDefaultEventHubEnable)
+        //if(_appSettings.IsDefaultEventHubEnable)
             eventHubConsumerClient = new EventHubConsumerClient(_appSettings.DefaultEventHub.ConsumerGroup, _appSettings.DefaultEventHub.EventHubsCompatibleEndpoint);
-        else
-            eventHubConsumerClient = new EventHubConsumerClient(_appSettings.CustomEventHub.ConsumerGroup, _appSettings.CustomEventHub.EventHubsCompatibleEndpoint);
+        //else
+        //    eventHubConsumerClient = new EventHubConsumerClient(_appSettings.CustomEventHub.ConsumerGroup, _appSettings.CustomEventHub.EventHubsCompatibleEndpoint);
 
         var tasks = new List<Task>();
         var partitions = await eventHubConsumerClient.GetPartitionIdsAsync();

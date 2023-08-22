@@ -4,6 +4,7 @@ using MongoDB.Driver.Linq;
 using SharpCompress.Common;
 using System.Linq;
 using iotintegrationapi.Model;
+using Microsoft.EntityFrameworkCore;
 
 public class DBLayer : IDBLayer
 {
@@ -23,10 +24,10 @@ public class DBLayer : IDBLayer
 
     }
 
-    public Location GetLocation(string DeviceId)
+    public List<Location> GetLocation(string DeviceId, int RecordCount)
     {
         MongoCollection Location = _mongoDatabase.GetCollection<Location>("Location");
-        var loc = Location.AsQueryable<Location>().AsQueryable().Where(x=> x.DeviceId == DeviceId).OrderByDescending(c => c.CreatedDateTime).FirstOrDefault();
+        var loc = Location.AsQueryable<Location>().AsQueryable().Where(x => x.DeviceId == DeviceId).OrderByDescending(c => c.CreatedDateTime).Take(RecordCount).ToList();
         return loc;
     }
 
