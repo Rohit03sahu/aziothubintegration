@@ -4,6 +4,7 @@
 #For more information, please see https://aka.ms/containercompat
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+#FROM https://mcr.microsoft.com/v2/dotnet/aspnet/manifests/7.0 AS  base
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 443

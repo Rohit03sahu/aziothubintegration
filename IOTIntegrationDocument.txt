@@ -17,6 +17,70 @@
 	Username : test_2023_0987@outlook.com
 	Password : Cricket@001
 
+
+============================== Container Registry Push AZ ========================================================
+
+	1. Create Container Registry on azure
+
+	Interactive Azure Client : az login --scope https://management.core.windows.net//.default
+
+	1. az acr login --name excerciseazureservice.azurecr.io
+
+	otherwise provide username password
+
+
+
+
+		**********************  Azure Login on CLI ********************** 
+
+		-- Create Container registry on Azure
+		-- Install Azure Client 
+
+		az acr login --name excerciseregistry.azurecr.io
+
+		Username : excerciseregistry
+		Password 1 : hh1lZY/A596vsveepOdEpsnpn5PsHL85
+		Password 2 : 4ogIPGKlqLFf9wusR=7IPLEH7q1f5K4w
+
+
+		**********************  Docker Commands CLI ********************** 
+
+			===>  Create Dockerfile
+			docker build -t aspnetapp .
+
+			===> Run Locally to verify 
+			docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
+
+			===> Create Tag
+			docker tag aspnetapp excerciseregistry/exercise_service_1:1
+			
+				OR
+			
+			docker tag aspnetapp excerciseregistry.azurecr.io/exercise_service_1:1
+			
+			===> Push Tag to registry
+			docker push excerciseregistry/exercise_service_1:1
+			
+				OR
+			
+			docker push excerciseregistry.azurecr.io/exercise_service_1:1
+
+		Once we pushed exercise_service_1 bucket will get generated in container registry
+
+
+		**********************  Now we can pull image from anywhere & test application **********************  
+			1. Login in container registry
+			2. Docker pull excerciseregistry.azurecr.io/exercise_service_1:1
+			3. docker run -it --rm -p 5000:80 --name excerciseregistry.azurecr.io/exercise_service_1:1
+
+		********************** Docker Login Registry **************************
+
+		 docker login excerciseazureservice.azurecr.io
+		 Username : excerciseazureservice
+		 Password : +O7v9PrzrbsjTJnH0WRssVOhxdzFRGDVaOfXLT7V1x+ACRAsQFVF
+
+
+
 ================================================  React =============================================================
 
 	Learn Doc : https://legacy.reactjs.org/docs/create-a-new-react-app.html
@@ -72,6 +136,13 @@
 	1. docker build -f Dockerfile -t iotintegrationui:latest .
 	2. docker run -it -p 4001:3000 iotintegrationui:latest
 	
+	********************** Docker build done and image already created iotintegrationui ************************
+
+	2. docker tag iotintegrationui:latest excerciseazureservice.azurecr.io/iotintegrationui:1
+
+	3. docker Push excerciseazureservice.azurecr.io/iotintegrationui:1
+
+
 ===========================  Create Dotnet api in VS code  ===========================
 
 
@@ -133,6 +204,13 @@
 	2. docker run -it -p 4001:3000 iotintegrationapi:latest
 
 
+	********************** Docker build done and image already created iotintegrationapi ************************
+	 
+	2. docker tag iotintegrationapi:latest excerciseazureservice.azurecr.io/iotintegrationapi:1
+
+	3. docker Push excerciseazureservice.azurecr.io/iotintegrationapi:1
+
+
 
 ===========================  Wokrer Service   ===========================
 
@@ -183,84 +261,11 @@
 	2. docker run -it iotintegrationconsumers:latest
 
 
-
-
-
-============================== Container Registry Push AZ ========================================================
-
-	1. Create Container Registry on azure
-
-	Interactive Azure Client : az login --scope https://management.core.windows.net//.default
-
-	1. az acr login --name excerciseazureservice.azurecr.io
-
-	otherwise provide username password
-
-
-		********************** Docker build done and image already created iotintegrationapi ************************
-	 
-	2. docker tag iotintegrationapi:latest excerciseazureservice.azurecr.io/iotintegrationapi:1
-
-	3. docker Push excerciseazureservice.azurecr.io/iotintegrationapi:1
-
-
-		********************** Docker build done and image already created iotintegrationconsumers ************************
+	********************** Docker build done and image already created iotintegrationconsumers ************************
 
 	2. docker tag iotintegrationconsumers:latest excerciseazureservice.azurecr.io/iotintegrationconsumers:1
 
 	3. docker Push excerciseazureservice.azurecr.io/iotintegrationconsumers:1
-
-
-		********************** Docker build done and image already created iotintegrationui ************************
-
-	2. docker tag iotintegrationui:latest excerciseazureservice.azurecr.io/iotintegrationui:1
-
-	3. docker Push excerciseazureservice.azurecr.io/iotintegrationui:1
-
-
-
-		**********************  Azure Login on CLI ********************** 
-
-		-- Create Container registry on Azure
-		-- Install Azure Client 
-
-		az acr login --name excerciseregistry.azurecr.io
-
-		Username : excerciseregistry
-		Password 1 : hh1lZY/A596vsveepOdEpsnpn5PsHL85
-		Password 2 : 4ogIPGKlqLFf9wusR=7IPLEH7q1f5K4w
-
-
-		**********************  Docker Commands CLI ********************** 
-
-			===>  Create Dockerfile
-			docker build -t aspnetapp .
-
-			===> Run Locally to verify 
-			docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
-
-			===> Create Tag
-			docker tag aspnetapp excerciseregistry/exercise_service_1:1
-			
-				OR
-			
-			docker tag aspnetapp excerciseregistry.azurecr.io/exercise_service_1:1
-			
-			===> Push Tag to registry
-			docker push excerciseregistry/exercise_service_1:1
-			
-				OR
-			
-			docker push excerciseregistry.azurecr.io/exercise_service_1:1
-
-		Once we pushed exercise_service_1 bucket will get generated in container registry
-
-
-		**********************  Now we can pull image from anywhere & test application **********************  
-			1. Login in container registry
-			2. Docker pull excerciseregistry.azurecr.io/exercise_service_1:1
-			3. docker run -it --rm -p 5000:80 --name excerciseregistry.azurecr.io/exercise_service_1:1
-
 
 
 
@@ -274,3 +279,7 @@
 
 docker pull mongo
 	
+
+
+rohit
+Admin@123456
