@@ -20,16 +20,6 @@ builder.Services.AddTransient<IDBLayer, DBLayer>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddCors(options =>
-//{
-//    options.AddDefaultPolicy(
-//            builder =>
-//            {
-//                builder.WithOrigins("https://localhost:3001", "http://localhost:3001")
-//                                    .AllowAnyHeader()
-//                                    .AllowAnyMethod();
-//            });
-//});
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -46,13 +36,11 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// if (!app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
+// }
 
 app.UseAuthorization();
 
