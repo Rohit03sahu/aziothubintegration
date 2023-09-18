@@ -3,7 +3,6 @@ import '../DeviceIntegratioCss/DeviceCss.css';
 import Button from '../Component/Button';
 import TextArea from '../Component/TextArea';
 import TextBox from '../Component/TextBox';
-import GeoPosition from '../Component/ReceiveEvent';
 // import { Client } from 'azure-iothub';
 
 function Device() {    

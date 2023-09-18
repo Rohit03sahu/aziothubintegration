@@ -8,6 +8,7 @@ function DeviceLocation() {
     const [locationData, setlocationData] = useState([]);
     const [isSubmit, setisSubmit] = useState(true);
     const [deviceId, setdeviceId] = useState('iot-device-001');
+    const [intervalValue, setIntervalValue] = useState();
     const setlathandleChange = event => {
         setlat(event.target.value);
         console.log('lat value is:', event.target.value);
@@ -19,20 +20,18 @@ function DeviceLocation() {
     };
 
     const onSubmit = event => {
-        //setisSubmit(!isSubmit);
-        //setdeviceId(deviceId);
-    };
-
-    useEffect(() => {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Accept', 'application/json');
         headers.append('Access-Control-Allow-Origin', 'http://localhost:3001');
         headers.append('Access-Control-Allow-Credentials', 'true');
         headers.append('GET', 'POST', 'OPTIONS');
-        let _deviceName=deviceId;
-        let interval = setInterval(async () => {
-            fetch('http://gpsapp.centralindia.cloudapp.azure.com:4002/api/device-location?DeviceId=' + _deviceName +'&recordcount=5').then((response) => {
+        if(setIntervalValue)
+            clearInterval(intervalValue);
+
+        setIntervalValue(setInterval(async () => {
+            let _deviceName=deviceId;
+            fetch('http://gpsapp.centralindia.cloudapp.azure.com:4002/api/device-location?DeviceId=' + _deviceName +'&recordcount=1').then((response) => {
                 if (response.ok) {
                     var resp = response.json();
                     return resp;
@@ -40,19 +39,17 @@ function DeviceLocation() {
                 throw new Error('Something went wrong');
             })
                 .then((responseJson) => {                  
-                    setlocationData(responseJson);                   
-                    //console.log(responseJson);
+                    setlocationData(responseJson);
                 })
                 .catch((error) => {
                     console.log(error)
                 });
-            //console.log(resp)0
-        }, 5000);
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
+        }, 5000));
 
+        // return () => {
+        //     clearInterval(interval);
+        // };
+    };
 
     return (
         <div>
@@ -69,6 +66,7 @@ function DeviceLocation() {
                 <input type="text" name="Long" onChange={setlnghandleChange} value={lng} />
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="button" onClick={onSubmit} className="btn">Show Device </button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <br /><br />
             </div>
             <div style={{ textAlign:"center", width: "60%", marginLeft: "20%", marginRight: "20%", marginTop: "3%" }}>
