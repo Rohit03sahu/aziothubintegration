@@ -31,7 +31,7 @@ function DeviceLocation() {
 
         setIntervalValue(setInterval(async () => {
             let _deviceName=deviceId;
-            fetch('http://gpsapp.centralindia.cloudapp.azure.com:4002/api/device-location?DeviceId=' + _deviceName +'&recordcount=1').then((response) => {
+            fetch('http://localhost:5116/api/device-location?DeviceId=' + _deviceName +'&recordcount=1').then((response) => {
                 if (response.ok) {
                     var resp = response.json();
                     return resp;

@@ -135,7 +135,6 @@ C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\Microsoft.Rest.ClientRuntime.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
-C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\System.Diagnostics.DiagnosticSource.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\System.Memory.Data.dll
 C:\Projects\GitRepo\aziothubintegration\iotintegrationconsumers\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll

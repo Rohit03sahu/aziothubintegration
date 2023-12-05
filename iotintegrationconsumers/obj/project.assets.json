@@ -8372,8 +8372,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://10.2.94.253:8081/artifactory/api/nuget/v3/ipg2-nugetpackages-nuget": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "http://10.2.94.253:8081/artifactory/api/nuget/v3/ipg2-nugetpackages-nuget": {}
       },
       "frameworks": {
         "net7.0": {
@@ -8452,7 +8451,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
